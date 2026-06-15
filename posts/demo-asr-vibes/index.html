@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo: Comparing ASR systems via ~vibes~ — Eli Pugh</title>
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="wrap wide">
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../blog.html" class="active">Blog</a>
+      <button id="theme-toggle" class="theme-toggle" type="button">Dark</button>
+    </nav>
+
+    <h1>Demo: Comparing ASR systems via ~vibes~</h1>
+
+    <article class="post">
+      <h2>Vibes or Evals?</h2>
+
+      <p>I have a strongly-held opinion that evals should be as close as possible to the real calls!</p>
+
+      <ul>
+        <li>
+          <strong>collect</strong> REAL data as close to how your model will be used
+          <ul>
+            <li>real users, accents, noises, scenarios, etc</li>
+            <li>if untenable, use something like Apptek</li>
+          </ul>
+        </li>
+        <li>
+          <strong>simulate</strong> REAL calls as closely as possible
+          <ul>
+            <li>real streaming, real latency measurements</li>
+            <li>full/unclipped calls !!! never clip</li>
+          </ul>
+        </li>
+        <li>
+          <strong>measure</strong> the metrics that actually matter for voice agents
+          <ul>
+            <li>WER &mdash; be <strong>very</strong> thoughtful on normalization, or use LLMaaJ</li>
+            <li>precision/recall on entities or complex terms</li>
+            <li>precision/recall on turn-taking prediction</li>
+            <li>final transcript latency on each turn after the user ends</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>
+        A correlary to this is that I <strong>detest</strong> that people use leaderboards to
+        make purchasing decisions! This isn&rsquo;t cope &mdash; <code>ink-2</code> is &hellip;
+        really good on leaderboards :)
+      </p>
+
+      <div class="media-row">
+        <figure>
+          <img src="media/wer.png" alt="Word error rate comparison across ASR systems" />
+          <figcaption>WER</figcaption>
+        </figure>
+        <figure>
+          <img src="media/latency.png" alt="Latency comparison across ASR systems" />
+          <figcaption>Latency</figcaption>
+        </figure>
+        <figure>
+          <img src="media/price.png" alt="Price comparison across ASR systems" />
+          <figcaption>Price</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        BUT we didn&rsquo;t design it for leaderboards!! I promise!! We designed it for real
+        voice-agent calls!
+      </p>
+
+      <p>
+        Since I can&rsquo;t got out and collect calls for you that sound like your domain, maybe
+        what I can do is appeal to your ~ vibes ~ which I actually believe are better than
+        leaderboards!
+      </p>
+
+      <p>
+        You can get a better idea of where a model excels or falls short just by playing with it
+        for a few minutes! This is better than looking at every single leaderboard&hellip; (but
+        worse than extremely thorough evals)
+      </p>
+
+      <h2>Vibe Collection Methodology</h2>
+
+      <p>Shoutout Aiqi who vibe-coded a custom comparer tool for us!</p>
+
+      <p>
+        This allows us to play an audio file and watch the transcripts stream out it realtime. It
+        also shows us where each <code>&lt;end-of-turn&gt;</code> prediction happened for each
+        provider to compare latency.
+      </p>
+
+      <p>
+        <em>
+          Note: It&rsquo;s not open-source yet, and we can&rsquo;t expose it because I think it
+          breaks ToS to run competitors on our website?? I&rsquo;m a little confused because
+          Soniox has a comparison tool which is incredibly useful &hellip; maybe they&rsquo;re
+          bending these ToS? In any case &mdash; if I were a customer I&rsquo;d be using this tool
+          all the time :)
+        </em>
+      </p>
+
+      <h3>Cherry-Picking</h3>
+
+      <p>Are these videos cherry-picked? <strong>Yes!</strong></p>
+
+      <p>
+        But I really didn&rsquo;t have a hard time picking these cherries &mdash; many things you
+        see here are patterns that I actually found to be a surprisingly consistent.
+      </p>
+
+      <p>
+        Were there some examples where we got a word wrong and a competitor got it correct? Yes!
+        But for the most part in the categories below <code>ink-2</code> really does perform
+        favorably.
+      </p>
+
+      <h3>Entities</h3>
+      <video class="post-video" controls preload="metadata" src="media/0_32wash.mp4"></video>
+
+      <h3>Turn-Taking</h3>
+      <video class="post-video" controls preload="metadata" src="media/1_201fre.mp4"></video>
+      <video class="post-video" controls preload="metadata" src="media/2_123har.mp4"></video>
+
+      <h3>Background Speech &amp; Crossbleed</h3>
+      <video class="post-video" controls preload="metadata" src="media/3_n5harold.mp4"></video>
+      <video class="post-video" controls preload="metadata" src="media/4_montreal.mp4"></video>
+      <video class="post-video" controls preload="metadata" src="media/5_mild.mp4"></video>
+
+      <h3>Accents</h3>
+      <video class="post-video" controls preload="metadata" src="media/6_bonsai.mp4"></video>
+
+      <h3>Knowledge &amp; Contextuality</h3>
+      <video class="post-video" controls preload="metadata" src="media/7_lester.mp4"></video>
+    </article>
+
+    <p class="back-link"><a href="../../blog.html">&larr; Back to blog</a></p>
+
+    <footer>&copy; 2026 Eli Pugh</footer>
+  </div>
+  <script src="../../theme.js"></script>
+</body>
+</html>
