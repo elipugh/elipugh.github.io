@@ -62,7 +62,7 @@ Notes:
 - Ink-2 is pretty good at predicting (via tone & semantics both) when people are pausing to think or when they’re finished talking
 - Deepgram does well here too!
 - All other providers struggle on turn-taking.
-- One bonus - notice how sloowwwww Ink-2 is at the end of the phone number. This is intentional! The model is smart enough that it waits a really long time - it expects more digits :)
+- One bonus - notice how sloowwwww Ink-2 is at the end of the phone number. This is intentional since it's incomplete! The model is smart enough that it waits a really long time - it expects more digits :)
 
 ---
 
