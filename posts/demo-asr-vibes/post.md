@@ -16,7 +16,7 @@ I have a strongly-held opinion that evals should be as close as possible to the 
     - precision/recall on turn-taking prediction
     - final transcript latency on each turn after the user ends
 
-A corollary to this is that I **detest** that people use leaderboards to make purchasing decisions! This isn’t cope - `ink-2` is … really good on leaderboards :)
+A corollary to this is that leaderboards are a **terrible** way to make purchasing decisions! This isn’t cope - ink-2 is … really good on leaderboards :)
 
 <insert pictures - wer, latency, price>
 
