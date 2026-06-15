@@ -1,301 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Eli Pugh Personal Website</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- Lato -->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <!-- Montserrat -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <!-- Press Start 2P -->
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
-  <!-- Cutive Mono -->
-  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" type="text/css">
-  <!-- Anonymous Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet" type="text/css">
-  <!-- Londrina Shadow -->
-  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet" type="text/css">
-  <!-- Arbutus Slab -->
-  <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet" type="text/css">
-  <!-- Raleway -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-  <!-- M PLUS Rounded 1c -->
-  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  body {
-      font: 400 15px/1.8 Lato, sans-serif;
-      color: #777;
-  }
-  h3, h4 {
-      margin: 10px 0 30px 0;
-      letter-spacing: 10px;      
-      font-size: 20px;
-      color: #111;
-  }
-  h2 {
-      margin: 10px 0 30px 0;
-      letter-spacing: 10px;      
-      font-size: 30px;
-      color: #111;
-  }
-  h1 {
-      margin: 10px 0 30px 0;
-      letter-spacing: 10px;
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 50px;
-      color: #ffffff;
-  }
-  .container {
-      padding: 50px 100px;
-  }
-  .person {
-      border: 10px solid transparent;
-      margin-bottom: 25px;
-      width: 80%;
-      height: 80%;
-      opacity: 0.7;
-  }
-  .person:hover {
-      border-color: #f1f1f1;
-  }
-  .carousel-inner img {
-      -webkit-filter: grayscale(90%);
-      filter: grayscale(90%); /* make all photos black and white */ 
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-  }
-  .carousel-caption h3 {
-      color: #fff !important;
-  }
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-  }
-  .bg-1 {
-      background: #2d2d30;
-      color: #bdbdbd;
-  }
-  .bg-1 h3 {color: #fff;}
-  .bg-1 p {font-style: italic;}
-  .list-group-item:first-child {
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
-  }
-  .list-group-item:last-child {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail p {
-      margin-top: 15px;
-      color: #555;
-  }
-  .btn {
-      padding: 10px 20px;
-      background-color: #333;
-      color: #f1f1f1;
-      border-radius: 0;
-      transition: .2s;
-  }
-  .btn:hover, .btn:focus {
-      border: 1px solid #333;
-      background-color: #fff;
-      color: #000;
-  }
-  .modal-header, h4, .close {
-      background-color: #333;
-      color: #fff !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-header, .modal-body {
-      padding: 40px 50px;
-  }
-  .nav-tabs li a {
-      color: #777;
-  }
-  .navbar {
-      font-family: Montserrat, sans-serif;
-      margin-bottom: 0;
-      background-color: #2d2d30;
-      border: 0;
-      font-size: 11px !important;
-      letter-spacing: 4px;
-      opacity: 0.9;
-  }
-  .navbar li a, .navbar .navbar-brand { 
-      color: #d5d5d5 !important;
-  }
-  .navbar-nav li a:hover {
-      color: #fff !important;
-  }
-  .navbar-nav li.active a {
-      color: #fff !important;
-      background-color: #29292c !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-  }
-  .open .dropdown-toggle {
-      color: #fff;
-      background-color: #555 !important;
-  }
-  .dropdown-menu li a {
-      color: #000 !important;
-  }
-  .dropdown-menu li a:hover {
-      background-color: red !important;
-  }
-  footer {
-      background-color: #2d2d30;
-      color: #f5f5f5;
-      padding: 32px;
-  }
-  footer a {
-      color: #f5f5f5;
-  }
-  footer a:hover {
-      color: #777;
-      text-decoration: none;
-  }  
-  .form-control {
-      border-radius: 0;
-  }
-  textarea {
-      resize: none;
-  }
-  hr {
-   display: block;
-   position: relative;
-   padding: 0;
-   margin: 8px auto;
-   height: 0;
-   width: 100%;
-   max-height: 0;
-   font-size: 1px;
-   line-height: 0;
-   clear: both;
-   border: none;
-   border-top: 1px solid #a4a4a4;
-   border-bottom: 1px solid #ffffff;
-}
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eli Pugh</title>
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body id="EliPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <button id="theme-toggle" class="theme-toggle" type="button">Dark</button>
+    </nav>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <img class="headshot" src="images/profile.jpg" alt="Eli Pugh" />
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!--<div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#EliPage">Eli Pugh</a>
-    </div>-->
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-left">
-        <li><a href="https://github.com/elipugh"><img src="images/github.png" class="img-responsive margin" style="display:inline" alt="githublogo" width="30" height="30"></a></li>
-        <li><a href="https://vsco.co/elipugh/images/1"><img src="images/vsco.png" class="img-responsive margin" style="display:inline" alt="vscologo" width="30" height="30"></a></li>
-        <li><a href="https://open.spotify.com/user/elite_runner16?si=5TK1Ptr7Rxa6Aka6bcW_rg"><img src="images/spotify.png" class="img-responsive margin" style="display:inline" alt="spotifylogo" width="30" height="30"></a></li>
-        <li><a href="https://twitter.com/elipughtri"><img src="images/twitter.png" class="img-responsive margin" style="display:inline" alt="twitterlogo" width="30" height="30"></a></li>
-        <li><a href="https://www.instagram.com/eli.pugh/"><img src="images/instagram.png" class="img-responsive margin" style="display:inline" alt="instagramlogo" width="30" height="30"></a></li>
-        <li><a href="https://www.facebook.com/elipugh/"><img src="images/facebook.png" class="img-responsive margin" style="display:inline" alt="facebooklogo" width="30" height="30"></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#EliPage">HOME</a></li>
-      </ul>
-    </div>
+    <h1>Eli Pugh</h1>
+    <p class="subtitle">Member of Technical Staff at Cartesia AI</p>
+
+    <p>
+      I work on speech applications at
+      <a href="https://www.cartesia.ai">Cartesia AI</a>. You can try out our
+      models in the <a href="https://play.cartesia.ai">playground</a>.
+    </p>
+
+    <p class="socials">
+      <span class="label">Socials:</span>
+      <a href="https://www.linkedin.com/in/elipugh/">LinkedIn</a> &middot;
+      <a href="https://x.com/elipughresearch">Twitter</a> &middot;
+      <a href="https://www.strava.com/athletes/17695897">Strava</a>
+    </p>
+
+    <footer>&copy; 2026 Eli Pugh</footer>
   </div>
-</nav>
-
-<div class="container-fluid bg-1 text-center" style="padding-top: 90px; padding-bottom: 10px; padding-right: 250px; padding-left:250px;">
-  <img src="images/profilepic.jpg" class="img-circle margin center" alt="profilepic" width="200" height="200">
-</div>
-
-<div class="container-fluid bg-1 text-center" style="padding-top: 10px; padding-bottom: 40px; padding-right: 250px; padding-left:250px;">
-  <h1 class="margin">Eli Pugh</h1>
-</div>
-
-<div id="social" class="container text-center">
-  <h2> SITE IS A WORK IN PROGRESS <br> </h2>
-  <hr>
-<!--   <div class="row">
-    <div class="col-sm-4" style="overflow-y:scroll; height:370px">
-      <p class="text-center"><strong>Twitter @elipughtri</strong></p><br>
-      <a class="twitter-timeline" href="https://twitter.com/elipughtri?ref_src=twsrc%5Etfw">Tweets by elipughtri</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    <div class="col-sm-4" style="overflow-y:scroll; height:370px">
-      <p class="text-center"><strong>Facebook: Eli Pugh</strong></p><br>
-      <div class="fb-post" data-href="https://www.facebook.com/elipugh/posts/2191998547496904" data-width="250" data-show-text="true"><blockquote cite="https://www.facebook.com/elipugh/posts/2191998547496904" class="fb-xfbml-parse-ignore">Posted by <a href="https://www.facebook.com/elipugh">Eli Pugh</a> on&nbsp;<a href="https://www.facebook.com/elipugh/posts/2191998547496904">Sunday, June 24, 2018</a></blockquote></div>
-      <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100000603409566" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>-->
-    <!-- </div>
-    <div class="col-sm-4" style="overflow-y:scroll; height:370px">
-      <p class="text-center"><strong>Instagram: @elipugh</strong></p><br>
-      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="http://lightwidget.com/widgets/2aa9b3044f31504bb6eb04809ab9e15d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-    </div>
-  </div> -->
-</div>
-
-
-
-<!-- Footer -->
-<footer class="text-center">
-  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <p>I made this website using Bootstrap with the help of <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p> 
-</footer>
-
-<script>
-$(document).ready(function(){
-  // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip(); 
-  
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-})
-</script>
-
+  <script src="theme.js"></script>
 </body>
 </html>
