@@ -24,6 +24,11 @@
     <article class="post">
       <h2>Vibes or Evals?</h2>
 
+      <p>
+        When you&rsquo;re choosing an STT system for your voice-agent, there are so many options and
+        everyone claims to be The Best Model
+      </p>
+
       <p>I have a strongly-held opinion that evals should be as close as possible to the real calls!</p>
 
       <ul>
@@ -31,21 +36,21 @@
           <strong>collect</strong> REAL data as close to how your model will be used
           <ul>
             <li>real users, accents, noises, scenarios, etc</li>
-            <li>if untenable, use something like Apptek</li>
+            <li>if untenable, use something like <a href="https://huggingface.co/datasets/apptek-com/apptek_callcenter_dialogues">Apptek</a></li>
           </ul>
         </li>
         <li>
           <strong>simulate</strong> REAL calls as closely as possible
           <ul>
-            <li>real streaming, real latency measurements</li>
-            <li>full/unclipped calls !!! never clip</li>
+            <li>real streaming, measuring latency by wall-clock-time when responses arrive</li>
+            <li>full/unclipped calls &mdash; never short clips!</li>
           </ul>
         </li>
         <li>
           <strong>measure</strong> the metrics that actually matter for voice agents
           <ul>
-            <li>WER &mdash; be <em>very</em> thoughtful on normalization, or use LLMaaJ</li>
-            <li>precision/recall on entities or complex terms</li>
+            <li>WER &mdash; be <em>very</em> thoughtful on text normalization, or use an LLM to judge if the transcript is semantically accurate</li>
+            <li>precision/recall on entities and complex terms</li>
             <li>precision/recall on turn-taking prediction</li>
             <li>final transcript latency on each turn after the user ends</li>
           </ul>
@@ -74,8 +79,7 @@
       </div>
 
       <p>
-        BUT we didn&rsquo;t design it for leaderboards!! I promise!! We designed it for real
-        voice-agent calls!
+        BUT we didn&rsquo;t design it for leaderboards! We designed it for real voice-agent calls!
       </p>
 
       <p>
@@ -92,31 +96,18 @@
 
       <h2>Vibe Collection Methodology</h2>
 
-      <p>Shoutout Aiqi who vibe-coded a custom comparer tool for us!</p>
-
       <p>
-        This allows us to play an audio file and watch the transcripts stream out it realtime. It
-        also shows us where each <code>&lt;end-of-turn&gt;</code> prediction happened for each
-        provider to compare latency.
+        We vibe-coded a comparison tool that allows us to play an audio file and watch the
+        transcripts stream out in realtime. It also shows us where each
+        <code>&lt;end-of-turn&gt;</code> prediction happened for each provider to compare latency.
       </p>
 
       <p>
-        <em>
-          Note: It&rsquo;s not open-source yet, and we can&rsquo;t expose it because I think it
-          breaks ToS to run competitors on our website?? I&rsquo;m a little confused because
-          Soniox has a comparison tool which is incredibly useful &hellip; maybe they&rsquo;re
-          bending these ToS? In any case &mdash; if I were a customer I&rsquo;d be using this tool
-          all the time :)
-        </em>
-      </p>
-
-      <p>
-        I picked 4 competitors to compare against &mdash; all of these systems are REALLY GOOD. I
-        picked these competitors because they&rsquo;re <strong>amazing</strong>, and tons of people
-        love them for building voice agents, and they do well on our internal evals! No shade
-        towards DG, 11L, Assembly, Soniox &mdash; these are amazing products too, and for your
-        specific use-case and needs maybe they have something that fits better &#129335; You should
-        eval in the way I described at the top of this post to decide for yourself!
+        I picked 4 competitors to compare against &mdash; all of these systems are REALLY GOOD.
+        Tons of people love them for building voice agents, and they do well on our internal
+        evals! No shade towards DG, 11L, Assembly, Soniox &mdash; these are amazing products too,
+        and for your specific use-case maybe they have something that fits better &#129335; You
+        should eval in the way I described at the top of this post to decide for yourself!
       </p>
 
       <h3>Cherry-Picking</h3>
@@ -136,7 +127,7 @@
 
       <hr />
 
-      <h2>Entities</h2>
+      <h2>Entities and Numbers</h2>
       <video class="post-video" controls preload="metadata" src="media/0_32wash.mp4"></video>
       <p>Notes:</p>
       <ul>
