@@ -211,6 +211,16 @@ p {
   border-bottom-color: var(--accent);
 }
 
+.post hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 36px 0;
+}
+
+.post hr + h2 {
+  margin-top: 0;
+}
+
 .post ul {
   padding-left: 22px;
   margin: 0 0 18px;

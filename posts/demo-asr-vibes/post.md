@@ -42,7 +42,9 @@ But I really didn’t have a hard time picking these cherries - many things you 
 
 Were there some examples where we got a word wrong and a competitor got it correct? Yes! But for the most part in the categories below `ink-2` really does perform favorably.
 
-### Entities
+---
+
+## Entities
 
 <video 0>
 
@@ -53,7 +55,9 @@ Notes:
 - Ink-2 formatting could be better (we’ll fix this soon)
 - Soniox & 11L perfect!! (a little slow on turn-taking but ok)
 
-### Turn-Taking
+---
+
+## Turn-Taking
 
 <video 1>
 
@@ -62,21 +66,29 @@ Notes:
 - All other providers struggle on turn-taking.
 - One bonus - notice how sloowwwww Ink-2 is at the end of the phone number. This is intentional! The model is smart enough that it waits a really long time - it expects more digits :)
 
+---
+
 <video 2>
 
 - Another example that shows how important “semantic” or intelligent turn-detection is!
 - The user is clearly not finished with the address after “123”
 
-### Background Speech & Crossbleed
+---
+
+## Background Speech & Crossbleed
 
 <video 3>
 
 - This is simulating a drive-through order for a “Number 5” where there’s music playing in the car
 - Note that the goal is NOT to transcribe the music - this is almost never what we want…
 
+---
+
 <video 5>
 
 - Another drive-through example - notice more providers struggle on background speech here
+
+---
 
 <video 4>
 
@@ -84,16 +96,22 @@ Notes:
 - In cases like this, we want the ASR to be smart enough to ignore the crossbleed, AND to detect each turn, even though they’re fast and short
 - Ink-2 is the only model that does this well :)
 
-### Accents
+---
+
+## Accents
 
 <video 6>
 
 - All providers except deepgram do phenomenal here - kudos!
 - I think this is another common theme of DG Flux being incredibly fast and great at turn taking - but not quite as intelligent.
 
-### Knowledge & Contextuality
+---
+
+## Knowledge & Contextuality
 
 <video 7>
 
 - A fun one - some models are bigger footie fans than others :)
 - Taking context into account and having world knowledge is really important for a great transcription system!
+
+---
