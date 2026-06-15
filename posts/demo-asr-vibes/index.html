@@ -26,8 +26,18 @@
 
       <p>
         When you&rsquo;re choosing an STT system for your voice-agent, there are so many options and
-        everyone claims to be The Best Model
+        everyone claims to be &ldquo;The Best Model&rdquo;
       </p>
+
+      <p>
+        Leaderboards are nice because they&rsquo;re usually done by 3rd parties so they feel more
+        &ldquo;trustworthy&rdquo;, but they don&rsquo;t capture real voice-agent audio, and are
+        often missing key metrics. You can get a better idea of where a model excels or falls short
+        just by playing with it for a few minutes! This is better than looking at every single
+        leaderboard&hellip; (but worse than extremely thorough evals)
+      </p>
+
+      <h3>Where do benchmarks fall short?</h3>
 
       <p>I have a strongly-held opinion that evals should be as close as possible to the real calls!</p>
 
@@ -57,10 +67,18 @@
         </li>
       </ul>
 
+      <p>Most leaderboards:</p>
+
+      <ul>
+        <li>collect data from audiobooks, earnings calls, meetings &mdash; not voice-agent calls!</li>
+        <li>push through all audio at once instead of streaming audio in realtime</li>
+        <li>only measure WER, not entity or turn-taking metrics that matter for voice-agents</li>
+      </ul>
+
       <p>
-        A corollary to this is that I <strong>detest</strong> that people use leaderboards to
-        make purchasing decisions! This isn&rsquo;t cope &mdash; <code>ink-2</code> is &hellip;
-        really good on leaderboards :)
+        A corollary to this is that leaderboards are a <strong>terrible</strong> way to make
+        purchasing decisions! This isn&rsquo;t cope &mdash; <code>ink-2</code> is &hellip; really
+        good on leaderboards, we just think that the real-world is a bit messier :)
       </p>
 
       <div class="charts">
@@ -81,19 +99,14 @@
       </div>
 
       <p>
-        BUT we didn&rsquo;t design it for leaderboards! We designed it for real voice-agent calls!
+        We didn&rsquo;t design <code>ink-2</code> for leaderboards! We designed it for real
+        voice-agent calls!
       </p>
 
       <p>
         Since I can&rsquo;t get out and collect calls for you that sound like your domain, maybe
         what I can do is appeal to your ~ vibes ~ which I actually believe are better than
         leaderboards!
-      </p>
-
-      <p>
-        You can get a better idea of where a model excels or falls short just by playing with it
-        for a few minutes! This is better than looking at every single leaderboard&hellip; (but
-        worse than extremely thorough evals)
       </p>
 
       <h2>Vibe Collection Methodology</h2>
@@ -202,6 +215,10 @@
       </ul>
 
       <hr />
+
+      <p>
+        To try Ink-2 go to <a href="https://play.cartesia.ai/speech-to-text">our playground</a>!
+      </p>
     </article>
 
     <p class="back-link"><a href="../../blog.html">&larr; Back to blog</a></p>

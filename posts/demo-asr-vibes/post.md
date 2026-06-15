@@ -1,6 +1,10 @@
 ## Vibes or Evals?
 
-When you’re choosing an STT system for your voice-agent, there are so many options and everyone claims to be The Best Model
+When you’re choosing an STT system for your voice-agent, there are so many options and everyone claims to be “The Best Model”
+
+Leaderboards are nice because they’re usually done by 3rd parties so they feel more “trustworthy”, but they don’t capture real voice-agent audio, and are often missing key metrics. You can get a better idea of where a model excels or falls short just by playing with it for a few minutes! This is better than looking at every single leaderboard… (but worse than extremely thorough evals)
+
+### Where do benchmarks fall short?
 
 I have a strongly-held opinion that evals should be as close as possible to the real calls!
 
@@ -16,15 +20,19 @@ I have a strongly-held opinion that evals should be as close as possible to the 
     - precision/recall on turn-taking prediction
     - final transcript latency on each turn after the user ends
 
-A corollary to this is that leaderboards are a **terrible** way to make purchasing decisions! This isn’t cope - ink-2 is … really good on leaderboards :)
+Most leaderboards:
+
+- collect data from audiobooks, earnings calls, meetings - not voice-agent calls!
+- push through all audio at once instead of streaming audio in realtime
+- only measure WER, not entity or turn-taking metrics that matter for voice-agents
+
+A corollary to this is that leaderboards are a **terrible** way to make purchasing decisions! This isn’t cope - `ink-2` is … really good on leaderboards, we just think that the real-world is a bit messier :)
 
 <insert pictures - wer, latency, price>
 
-BUT we didn’t design it for leaderboards! We designed it for real voice-agent calls!
+We didn’t design `ink-2` for leaderboards! We designed it for real voice-agent calls!
 
 Since I can’t get out and collect calls for you that sound like your domain, maybe what I can do is appeal to your ~ vibes ~ which I actually believe are better than leaderboards!
-
-You can get a better idea of where a model excels or falls short just by playing with it for a few minutes! This is better than looking at every single leaderboard… (but worse than extremely thorough evals)
 
 ## Vibe Collection Methodology
 
@@ -113,3 +121,5 @@ Notes:
 - Taking context into account and having world knowledge is really important for a great transcription system!
 
 ---
+
+To try Ink-2 go to [our playground](https://play.cartesia.ai/speech-to-text)!
