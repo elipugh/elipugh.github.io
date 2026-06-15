@@ -44,7 +44,7 @@
         <li>
           <strong>measure</strong> the metrics that actually matter for voice agents
           <ul>
-            <li>WER &mdash; be <strong>very</strong> thoughtful on normalization, or use LLMaaJ</li>
+            <li>WER &mdash; be <em>very</em> thoughtful on normalization, or use LLMaaJ</li>
             <li>precision/recall on entities or complex terms</li>
             <li>precision/recall on turn-taking prediction</li>
             <li>final transcript latency on each turn after the user ends</li>
@@ -53,7 +53,7 @@
       </ul>
 
       <p>
-        A correlary to this is that I <strong>detest</strong> that people use leaderboards to
+        A corollary to this is that I <strong>detest</strong> that people use leaderboards to
         make purchasing decisions! This isn&rsquo;t cope &mdash; <code>ink-2</code> is &hellip;
         really good on leaderboards :)
       </p>
@@ -79,7 +79,7 @@
       </p>
 
       <p>
-        Since I can&rsquo;t got out and collect calls for you that sound like your domain, maybe
+        Since I can&rsquo;t get out and collect calls for you that sound like your domain, maybe
         what I can do is appeal to your ~ vibes ~ which I actually believe are better than
         leaderboards!
       </p>
@@ -110,6 +110,15 @@
         </em>
       </p>
 
+      <p>
+        I picked 4 competitors to compare against &mdash; all of these systems are REALLY GOOD. I
+        picked these competitors because they&rsquo;re <strong>amazing</strong>, and tons of people
+        love them for building voice agents, and they do well on our internal evals! No shade
+        towards DG, 11L, Assembly, Soniox &mdash; these are amazing products too, and for your
+        specific use-case and needs maybe they have something that fits better &#129335; You should
+        eval in the way I described at the top of this post to decide for yourself!
+      </p>
+
       <h3>Cherry-Picking</h3>
 
       <p>Are these videos cherry-picked? <strong>Yes!</strong></p>
@@ -127,21 +136,58 @@
 
       <h3>Entities</h3>
       <video class="post-video" controls preload="metadata" src="media/0_32wash.mp4"></video>
+      <p>Notes:</p>
+      <ul>
+        <li>Deepgram Flux turns <code>5</code> &rarr; <code>life</code></li>
+        <li>Assembly struggles hugely in turn-taking prediction</li>
+        <li>Ink-2 formatting could be better (we&rsquo;ll fix this soon)</li>
+        <li>Soniox &amp; 11L perfect!! (a little slow on turn-taking but ok)</li>
+      </ul>
 
       <h3>Turn-Taking</h3>
       <video class="post-video" controls preload="metadata" src="media/1_201fre.mp4"></video>
+      <ul>
+        <li>Ink-2 is pretty good at predicting (via tone &amp; semantics both) when people are pausing to think or when they&rsquo;re finished talking</li>
+        <li>Deepgram does well here too!</li>
+        <li>All other providers struggle on turn-taking.</li>
+        <li>One bonus &mdash; notice how sloowwwww Ink-2 is at the end of the phone number. This is intentional! The model is smart enough that it waits a really long time &mdash; it expects more digits :)</li>
+      </ul>
       <video class="post-video" controls preload="metadata" src="media/2_123har.mp4"></video>
+      <ul>
+        <li>Another example that shows how important &ldquo;semantic&rdquo; or intelligent turn-detection is!</li>
+        <li>The user is clearly not finished with the address after &ldquo;123&rdquo;</li>
+      </ul>
 
       <h3>Background Speech &amp; Crossbleed</h3>
       <video class="post-video" controls preload="metadata" src="media/3_n5harold.mp4"></video>
-      <video class="post-video" controls preload="metadata" src="media/4_montreal.mp4"></video>
+      <ul>
+        <li>This is simulating a drive-through order for a &ldquo;Number 5&rdquo; where there&rsquo;s music playing in the car</li>
+        <li>Note that the goal is NOT to transcribe the music &mdash; this is almost never what we want&hellip;</li>
+      </ul>
       <video class="post-video" controls preload="metadata" src="media/5_mild.mp4"></video>
+      <ul>
+        <li>Another drive-through example &mdash; notice more providers struggle on background speech here</li>
+      </ul>
+      <video class="post-video" controls preload="metadata" src="media/4_montreal.mp4"></video>
+      <ul>
+        <li>This is an example with crossbleed, where the speakerphone mic is picking up the caller</li>
+        <li>In cases like this, we want the ASR to be smart enough to ignore the crossbleed, AND to detect each turn, even though they&rsquo;re fast and short</li>
+        <li>Ink-2 is the only model that does this well :)</li>
+      </ul>
 
       <h3>Accents</h3>
       <video class="post-video" controls preload="metadata" src="media/6_bonsai.mp4"></video>
+      <ul>
+        <li>All providers except deepgram do phenomenal here &mdash; kudos!</li>
+        <li>I think this is another common theme of DG Flux being incredibly fast and great at turn taking &mdash; but not quite as intelligent.</li>
+      </ul>
 
       <h3>Knowledge &amp; Contextuality</h3>
       <video class="post-video" controls preload="metadata" src="media/7_lester.mp4"></video>
+      <ul>
+        <li>A fun one &mdash; some models are bigger footie fans than others :)</li>
+        <li>Taking context into account and having world knowledge is really important for a great transcription system!</li>
+      </ul>
     </article>
 
     <p class="back-link"><a href="../../blog.html">&larr; Back to blog</a></p>
