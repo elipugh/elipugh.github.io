@@ -2,7 +2,9 @@
 
 When you’re choosing an STT system for your voice-agent, there are so many options and everyone claims to be “The Best Model”
 
-Leaderboards are nice because they’re usually done by 3rd parties so they feel more “trustworthy”, but they don’t capture real voice-agent audio, and are often missing key metrics. You can get a better idea of where a model excels or falls short just by playing with it for a few minutes! This is better than looking at every single leaderboard… (but worse than extremely thorough evals)
+Leaderboards are nice because they’re usually done by 3rd parties so they feel more “trustworthy”, but they don’t capture real voice-agent audio, and are often missing key metrics. To capture these things you really need to be thoughtful about evals.
+
+In lieu of thoughtful evals, you can usually get an idea of where a model excels or falls short just by playing with it for a few minutes! Even a quick vibe-check is often more powerful than looking at leaderboards, since the leaderboards can actually be gamed, might be too far from your use-case, or measuring the wrong things.
 
 ### Where do benchmarks fall short?
 
@@ -20,7 +22,7 @@ I have a strongly-held opinion that evals should be as close as possible to the 
     - precision/recall on turn-taking prediction
     - final transcript latency on each turn after the user ends
 
-Most leaderboards:
+### Most leaderboards:
 
 - collect data from audiobooks, earnings calls, meetings - not voice-agent calls!
 - push through all audio at once instead of streaming audio in realtime
